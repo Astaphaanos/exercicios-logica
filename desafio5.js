@@ -114,7 +114,7 @@ function mediaPares(array) {
             contador++
         }
     }
-    return contador ===0 ? 0 : soma / contador
+    return contador === 0 ? 0 : soma / contador
 }
 
 console.log(mediaPares([1, 2, 3, 4, 6])); // 4 (média de 2, 4 e 6)
