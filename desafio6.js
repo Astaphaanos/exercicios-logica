@@ -84,38 +84,81 @@ console.log(multiplicarImpares([2, 4, 6]));     // 1 (nenhum ímpar, retorno pad
 //6. Duplicar Caracteres
 //Crie uma função que recebe uma string e retorna uma nova string com cada caractere duplicado.
 
-//duplicarCaracteres("abc");   // "aabbcc"
-//duplicarCaracteres("hello"); // "hheelllloo"
+function duplicarCaracteres(string) {
+    let novaString = '';
+    for (let i = 0; i < string.length; i++) {
+        novaString += string[i] + string[i];
+    }
+    return novaString
+}
+
+console.log(duplicarCaracteres("abc"));   // "aabbcc"
+console.log(duplicarCaracteres("hello")); // "hheelllloo"
 
 
 
 // 7. Números Divisíveis por 5
 //Crie uma função que recebe um array de números e retorna apenas os números que são divisíveis por 5.
 
-//divisiveisPor5([5, 10, 12, 15]); // [5, 10, 15]
-//divisiveisPor5([2, 4, 7]);       // []
+function divisiveisPor5 (array) {
+    let novoArray = []
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 5 == 0) {
+            novoArray.push(array[i]);
+        }
+    }
+    return novoArray
+}
+console.log(divisiveisPor5([5, 10, 12, 15])); // [5, 10, 15]
+console.log(divisiveisPor5([2, 4, 7]));       // []
 
 
 
 // 8. Converter Minutos para Horas
 //Crie uma função que recebe um número de minutos e retorna o equivalente em horas e minutos
 
-//converterMinutos(125); // "2 horas e 5 minutos"
-//converterMinutos(90);  // "1 hora e 30 minutos"
+function converterMinutos(num) {
+    let horas = Math.floor(num / 60);
+    let minutos = num % 60;
+    return `${horas} horas(s) e ${minutos} minutos(s)`
+    
+}
+
+console.log(converterMinutos(125)); // "2 horas e 5 minutos"
+console.log(converterMinutos(90));  // "1 hora e 30 minutos"
 
 
 
 //9. Contar Números Acima de X
 //Crie uma função que recebe um array de números e um número X, e retorna quantos números do array são maiores que X.
 
-//contarMaiores([10, 20, 30], 15); // 2
-//contarMaiores([1, 2, 3], 5);     // 0
+function contarMaiores(array, x) {
+    let contador = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > x) {
+            contador++
+        }
+    }
+    return contador;
+}
+
+console.log(contarMaiores([10, 20, 30], 15)); // 2
+console.log(contarMaiores([1, 2, 3], 5));     // 0
 
 
 
 //10. Verificar Ordem Crescente
 //Crie uma função que verifica se um array de números está em ordem crescente.
 
-//verificarCrescente([1, 2, 3]);    // true
-//verificarCrescente([1, 3, 2]);    // false
-//verificarCrescente([10, 20, 30]); // true
+function verificarCrescente(array) {
+    for (let i = 0; i < array.length -1; i++) {
+        if (array[i] > array[i + 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(verificarCrescente([1, 2, 3]));    // true
+console.log(verificarCrescente([1, 3, 2]));    // false
+console.log(verificarCrescente([10, 20, 30])); // true
